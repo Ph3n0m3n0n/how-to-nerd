@@ -8,6 +8,7 @@ var hbs = require('express-handlebars');
 var stormpath = require('express-stormpath');
 var mongoose = require('mongoose');
 var request = require('request');
+var cheerio = require('cheerio');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
