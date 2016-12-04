@@ -17,13 +17,6 @@ var social = require('./routes/social');
 
 var app = express();
 
-// request('http://www.howtogeek.com/', function(err, res, body){
-//   app.get('/', function(req, res, next) {
-//   res.send(body);
-// });
-  
-// });
-
 // view engine setup
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
