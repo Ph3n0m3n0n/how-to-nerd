@@ -11,23 +11,28 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var articles = require('./routes/articles');
+var profile = require('./routes/profile');
+var social = require('./routes/social');
+
 
 var app = express();
 
-request('http://www.howtogeek.com/', function(err, res, body){
-  console.log(body);
-});
+// request('http://www.howtogeek.com/', function(err, res, body){
+//   app.get('/', function(req, res, next) {
+//   res.send(body);
+// });
+  
+// });
 
 // view engine setup
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
 app.use(stormpath.init(app, {
   website: true,
-  href: 'https://api.stormpath.com/v1/applications/1Nco2y0d6M8cZ8SyOlKejW'
+  href: 'https://api.stormpath.com/v1/applications/1lGAstZRRoe32wl3gHgtNm'
 }));
 
 // uncomment after placing your favicon in /public
@@ -39,8 +44,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/articles', articles);
+app.use('/profile', profile);
+app.use('/social', social);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -74,7 +79,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.on('stormpath.ready', function () {
-  console.log('Stormpath Ready!');
+  console.log('Stormpath Ready! Server starting on port 3000');
 });
 
 

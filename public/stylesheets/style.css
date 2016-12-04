@@ -17,9 +17,10 @@ header {
     padding: 25px;
 }
 footer {
+    display: flex;
     background-color: darkgrey;
     height: 20%;
-    width: 94%;
+    width: 100%;
     padding: 25px;
     margin: 10px;
 }
