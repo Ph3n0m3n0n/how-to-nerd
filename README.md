@@ -7,3 +7,4 @@ Do you want to post helpful articles to teach people how to do cool nerdy, techy
 
 But before you can become a "Nerd", you have to pass a test...
 
+"# how-to-nerd-home" 

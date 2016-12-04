@@ -32,7 +32,14 @@ app.set('view engine', 'hbs');
 
 app.use(stormpath.init(app, {
   website: true,
-  href: 'https://api.stormpath.com/v1/applications/1lGAstZRRoe32wl3gHgtNm'
+  href: 'https://api.stormpath.com/v1/applications/1lGAstZRRoe32wl3gHgtNm',
+  web: {
+  logout: {
+    enabled: true,
+    uri: '/log-me-out',
+    nextUri: '/goodbye'
+  }
+}
 }));
 
 // uncomment after placing your favicon in /public
@@ -79,7 +86,8 @@ app.use(function(err, req, res, next) {
 });
 
 app.on('stormpath.ready', function () {
-  console.log('Stormpath Ready! Server starting on port 3000');
+  app.listen(process.env.PORT || 3001);
+  console.log('Stormpath Ready! Server starting on port 3001');
 });
 
 
