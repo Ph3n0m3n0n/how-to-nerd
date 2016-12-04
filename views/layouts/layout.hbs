@@ -11,22 +11,54 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
+
+<!-- Facebook script -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '148610458950725',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><!-- End of Facebook script tag -->
+
 <div id="header">
 <nav class="navbar navbar-top">
 <div class="container">
-<div class="navbar-header"><h1><a href="/articles">How-To-Nerd</a></h1></div><br>
+<div class="navbar-header"><h1><a href="/">How-To-Nerd</a></h1></div><br>
 	<ul>
-  		<li style="float: right;"><a href="/index">Profile</a></li>
+  		<li style="float: right;"><a href="/profile">Profile</a></li>
   		<li style="float: right;"><a href="#contact">Contact</a></li>
-  		<li style="float: right;"><a href="/users">Connect</a></li>
-  		<li style="float: right;"><a href="/articles">Home</a></li>
+  		<li style="float: right;"><a href="/social">Connect</a></li>
+  		<li style="float: right;"><a href="/">Home</a></li>
 	</ul>
 </div>
 </nav>
 </div>
 <div><hr>
 
+<p>Loading the layout.hbs file but cannot find the other bodies. Why?</p>
+
 	{{{ body }}}
+
+	<div
+  		class="fb-like"
+  		data-share="true"
+  		data-width="450"
+  		data-show-faces="true">
+	</div>
+
+<!-- Test button to make sure that a button should appear with just div tags -->
+  <div class="btn btn-primary"></div>
 
 </div>
 <br>
